@@ -4,13 +4,17 @@ import { addToCart } from '../../redux/actions/cartActions';
 import { connect } from 'react-redux';
 
 const Shop = (props) => {
-    console.log(props)
-    const {products, addToCart} = props;
+    const { products, addToCart } = props;
     return (
         <div>
             <h4>this is shop</h4>
             {
-                products.map(product => <Product key={product.id} product={product} addToCart={addToCart}></Product>)
+                products.map(product =>
+                    <Product
+                        key={product.id}
+                        product={product}
+                        addToCart={addToCart}>
+                    </Product>)
             }
         </div>
     );
@@ -18,7 +22,6 @@ const Shop = (props) => {
 
 const mapStateToProps = state => {
     return {
-        cart: state.cart,
         products: state.products
     }
 }
