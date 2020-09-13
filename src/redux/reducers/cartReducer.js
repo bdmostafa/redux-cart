@@ -18,13 +18,13 @@ const cartReducers = (state = initialState, action) => {
             // const newCart = [...state.cart, newId];
             // return {cart: newCart}
             return {
-                products: state.products,
+                ...state,
                 cart: [...state.cart, action.id]
             }
         case REMOVE_FROM_CART:
             const id = action.id;
             const remainingCart = state.cart.filter(item => item !== id)
-            return { cart: remainingCart }
+            return { ...state, cart: remainingCart }
         default:
             return state;
     }
