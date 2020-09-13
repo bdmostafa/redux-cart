@@ -6,7 +6,7 @@ const Product = ({product: { id, name }, addToCart}) => {
     return (
         <div>
             <h5> {id}: {name} </h5>
-            <button onClick={() => addToCart(id)}>Add to cart</button>
+            <button onClick={() => addToCart(id, name)}>Add to cart</button>
             <hr />
         </div>
     );
